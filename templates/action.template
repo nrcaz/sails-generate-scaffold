@@ -1,28 +1,25 @@
 
-  'new': function(req,res){
+  new: function(req,res){
     res.view();    
   },
 
-  create: function(req, res) {
+  create: async function(req, res) {
 
     <%= compliledActionParamObject %>
 
     // Create a User with the params sent from 
     // the sign-up form --> new.ejs
-    <%= id %>.create(paramObj, function <%= modelControllerName %>Created(err, <%= modelControllerName %>) {
+    try {
+			var PrizeObj = await <%= id %>.create(paramObj).fetch();
+		} catch (err) {
+			console.log(err);
+			req.session.flash = {
+				err : err
+			};
+			return res.redirect('/<%= modelControllerName %>/new');
+		}
 
-      if (err) {
-        console.log(err);
-        req.session.flash = {
-          err: err
-        }
-        return res.redirect('/<%= modelControllerName %>/new');
-      }
-
-      // res.json(<%= modelControllerName %>);
-      res.redirect('/<%= modelControllerName %>/show/' + <%= modelControllerName %>.id);
-
-    });
+    res.redirect('/<%= modelControllerName %>/show/' + PrizeObj.id);
   },
 
   show: function(req, res, next) {
@@ -80,17 +77,10 @@
 
   destroy: function(req, res, next) {
 
-    <%= id %>.findOne(req.param('id'), function found<%= id %>(err, <%= modelControllerName %>) {
-      if (err) return next(err);
-
-      if (!<%= modelControllerName %>) return next('<%= id %> doesn\'t exist.');
-
-      <%= id %>.destroy(req.param('id'), function <%= modelControllerName %>Destroyed(err) {
+      <%= id %>.destroyOne({id: req.param('id')}, function <%= modelControllerName %>Destroyed(err) {
         if (err) return next(err);
     });        
 
       res.redirect('/<%= modelControllerName %>');
-
-    });
   }
  

@@ -1,5 +1,17 @@
-ERBstart _.each(_.keys(sails.controllers), function(controller) { ERBend
+<!-- add a link to each model route to display the associated scaffold -->
+<!-- ex : <a href="/User" class="btn btn-lg btn-success spar-list">User</a> -->
+<!-- 
+ Add the following routes to config/routes.js
 
-    <a href="/ERBstart= controller ERBend" class="btn btn-lg btn-success spar-list">ERBstart= controller ERBend</a>
+'/scaffold'                    : { view: 'pages/scaffold' },
 
-    ERBstart }) ERBend
+'GET /[ModelName]'             : '[ModelName]Controller.index',
+'GET /[ModelName]/new'         : '[ModelName]Controller.new',
+'POST /[ModelName]/create'     : '[ModelName]Controller.create',
+'POST /[ModelName]/update'     : '[ModelName]Controller.update',
+'GET /[ModelName]/show/:id'    : '[ModelName]Controller.show',
+'GET /[ModelName]/edit/:id'    : '[ModelName]Controller.edit',
+'GET /[ModelName]/destroy/:id' : '[ModelName]Controller.destroy'
+
+replace [ModelName] by the model name used when you created the scaffold ( ex: User ) 
+-->

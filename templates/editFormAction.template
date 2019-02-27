@@ -1,2 +1,2 @@
-<form action="/<%= modelControllerName %>/update/ERBstart<%= modelControllerName %>.idERBend" method="POST" class="edit">
+<form action="/<%= modelControllerName %>/update/ERBstart<%= modelControllerName %>.idERBend" method="POST" class="edit" style="margin:10px auto">
 	<div class="form-group">
