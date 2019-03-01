@@ -38,6 +38,30 @@ $ sails generate scaffold user name:string age:integer email:email
 
 The first argument will be the `model` and `controller` name.  You can add any number of model attributes and types. Finally, you can overwrite an existing scaffold by using the `--force` parameter.
 
+### To config Routes
+
+add a link to each Model into `view/pages/scaffold.js`
+
+Example :
+```html
+ <a href="/User" class="btn btn-lg btn-success spar-list">User</a>
+```
+Add the following routes to `config/routes.js`
+```js
+'/scaffold'                    : { view: 'pages/scaffold' },
+```
+and for each models :
+```js
+'GET /[ModelName]'             : '[ModelName]Controller.index',
+'GET /[ModelName]/new'         : '[ModelName]Controller.new',
+'POST /[ModelName]/create'     : '[ModelName]Controller.create',
+'POST /[ModelName]/update'     : '[ModelName]Controller.update',
+'GET /[ModelName]/show/:id'    : '[ModelName]Controller.show',
+'GET /[ModelName]/edit/:id'    : '[ModelName]Controller.edit',
+'GET /[ModelName]/destroy/:id' : '[ModelName]Controller.destroy',
+```
+replace `[ModelName]` by the model name used when you created the scaffold ( ex: `User` ) 
+
 ### More Resources
 
 - [Stackoverflow](http://stackoverflow.com/questions/tagged/sails.js)
