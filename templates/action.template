@@ -76,11 +76,12 @@
   },
 
   destroy: function(req, res, next) {
-
+    if ( req.method === 'POST') {
       <%= id %>.destroyOne({id: req.param('id')}, function <%= modelControllerName %>Destroyed(err) {
         if (err) return next(err);
     });        
 
       res.redirect('/<%= modelControllerName %>');
+    }
   }
  

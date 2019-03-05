@@ -2,8 +2,7 @@
   <div class="jumbotron">
     <h1>My Scaffolds</h1>
 
-    <h2>...your scaffolds are just a copy paste away.</h2>
-    <p>Check the source code of this page view/pages/scaffold.ejs to configure your scaffold routes</p>
+    <h2>Check the README to configure your scaffold route</h2>
     <%= compliledHomePageEJS %>
   </div>
 </div>
