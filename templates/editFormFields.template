@@ -4,3 +4,4 @@
 	<input value="ERBstart <%= modelControllerName %>.<%= name %> ERBend" name="<%= name %>" type="text" class="form-control"/>
 	</div>
 <% }) %>
+<input value="ERBstart <%= modelControllerName %>.id ERBend" name="id" type="hidden"/>
