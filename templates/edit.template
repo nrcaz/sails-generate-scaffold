@@ -3,7 +3,7 @@
 		<%= compiledEditFlash %>
 		<%= compiledEditFormFields %>
 		</div>
-		<input type="submit" value="Update <%= id %>" class="btn btn-default"/>
+		<input type="submit" value="Update <%= id %>" class="btn btn-primary"/>
 		<%= compiledEditShowLink %>
 	</form>
 	
