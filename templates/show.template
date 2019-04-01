@@ -5,5 +5,5 @@
 	</div>
 
 <%= compiledShowEditLink %>
-<a href="/<%= modelControllerName %>">Back to list</a>
+<a href="/scaffold/<%= modelControllerName %>">Back to list</a>
 </form>

@@ -1,2 +1,2 @@
-<form action="/<%= modelControllerName %>/update" method="POST" class="edit" style="margin:10px auto">
+<form action="/scaffold/<%= modelControllerName %>/update" method="POST" class="edit" style="margin:10px auto">
 	<div class="form-group">

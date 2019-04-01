@@ -16,10 +16,10 @@
 			req.session.flash = {
 				err : err
 			};
-			return res.redirect('/<%= modelControllerName %>/new');
+			return res.redirect('/scaffold/<%= modelControllerName %>/new');
 		}
 
-    res.redirect('/<%= modelControllerName %>/show/' + PrizeObj.id);
+    res.redirect('/scaffold/<%= modelControllerName %>/show/' + PrizeObj.id);
   },
 
   show: function(req, res, next) {
@@ -68,10 +68,10 @@
           err: err
         }
 
-        return res.redirect('/<%= modelControllerName %>/edit/' + req.param('id'));
+        return res.redirect('/scaffold/<%= modelControllerName %>/edit/' + req.param('id'));
       }
 
-      res.redirect('/<%= modelControllerName %>/show/' + req.param('id'));
+      res.redirect('/scaffold/<%= modelControllerName %>/show/' + req.param('id'));
     });
   },
 
@@ -81,7 +81,7 @@
         if (err) return next(err);
     });        
 
-      res.redirect('/<%= modelControllerName %>');
+      res.redirect('/scaffold/<%= modelControllerName %>');
     }
   }
  

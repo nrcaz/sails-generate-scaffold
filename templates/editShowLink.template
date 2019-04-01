@@ -1,1 +1,1 @@
-<a href="/<%= modelControllerName %>" class="btn btn-danger">Cancel</a>
+<a href="/scaffold/<%= modelControllerName %>" class="btn btn-danger">Cancel</a>

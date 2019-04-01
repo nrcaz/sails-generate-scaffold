@@ -52,13 +52,13 @@ Add the following routes to `config/routes.js`
 ```
 and for each models :
 ```js
-'GET /[ModelName]'             : '[ModelName]Controller.index',
-'GET /[ModelName]/new'         : '[ModelName]Controller.new',
-'POST /[ModelName]/create'     : '[ModelName]Controller.create',
-'POST /[ModelName]/update'     : '[ModelName]Controller.update',
-'POST /[ModelName]/destroy'    : '[ModelName]Controller.destroy',
-'GET /[ModelName]/show/:id'    : '[ModelName]Controller.show',
-'GET /[ModelName]/edit/:id'    : '[ModelName]Controller.edit',
+'GET /scaffold/[ModelName]'             : '[ModelName]Controller.index',
+'GET /scaffold/[ModelName]/new'         : '[ModelName]Controller.new',
+'POST /scaffold/[ModelName]/create'     : '[ModelName]Controller.create',
+'POST /scaffold/[ModelName]/update'     : '[ModelName]Controller.update',
+'POST /scaffold/[ModelName]/destroy'    : '[ModelName]Controller.destroy',
+'GET /scaffold/[ModelName]/show/:id'    : '[ModelName]Controller.show',
+'GET /scaffold/[ModelName]/edit/:id'    : '[ModelName]Controller.edit',
 ```
 replace `[ModelName]` by the model name used when you created the scaffold ( ex: `User` ) 
 

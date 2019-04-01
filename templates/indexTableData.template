@@ -2,10 +2,10 @@
 		<% _.forEach(modelAttributeNames, function(name) { %>
 			<td>ERBstart <%= modelControllerName %>.<%= name %>ERBend</td>
 		<% }) %>
-			<td><a href="/<%= modelControllerName %>/show/ERBstart<%= modelControllerName %>.id ERBend"  class="btn btn-primary btn-sm" role="button">Show</a></td>
-			<td><a href="/<%= modelControllerName %>/edit/ERBstart<%= modelControllerName %>.id ERBend"  class="btn btn-primary btn-sm" role="button">Edit</a></td>
+			<td><a href="/scaffold/<%= modelControllerName %>/show/ERBstart<%= modelControllerName %>.id ERBend"  class="btn btn-primary btn-sm" role="button">Show</a></td>
+			<td><a href="/scaffold/<%= modelControllerName %>/edit/ERBstart<%= modelControllerName %>.id ERBend"  class="btn btn-primary btn-sm" role="button">Edit</a></td>
 			<td>
-				<form action='/<%= modelControllerName %>/destroy' method='POST'>
+				<form action='/scaffold/<%= modelControllerName %>/destroy' method='POST'>
 					<input type="hidden" name="id" value="ERBstart<%= modelControllerName %>.id ERBend"/>
 					<button type="submit" class="btn btn-danger btn-sm">Delete</button>
 				</form>
